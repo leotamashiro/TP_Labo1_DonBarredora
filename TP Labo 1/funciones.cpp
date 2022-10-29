@@ -1,17 +1,23 @@
 #include <iostream>
+#include <time.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
 #include "rlutil.h"
 using namespace std;
 
-//Dibujar Carta
-void dibujarCard(int ancho, int alto){
-     for (int x=1; x<=11;x++)
-    {
-        for (int y=1; y<=8; y++)
-        {
-            rlutil::locate (x,y);
-            rlutil::setBackgroundColor(15);
-            cout << " ";
-        }
-    }
-    rlutil::setBackgroundColor(0);
+int robar_1()
+{
+	int C=0;
+	srand (time (NULL));
+	C=1+rand()%(10);
+	return C;
+}
+
+int robar_2()
+{
+	int A=0;
+	srand (time (NULL));
+	A=1+rand()%(60);
+	return A;
 }

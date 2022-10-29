@@ -24,3 +24,50 @@
 
 1666993057 c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1\funciones.h
 
+1667048158 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\funciones.cpp
+	<iostream>
+	<time.h>
+	<ctime>
+	<cstdlib>
+	<string>
+	"rlutil.h"
+
+1666993592 f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1667048156 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\main.cpp
+	<iostream>
+	<time.h>
+	"rlutil.h"
+	"funciones.h"
+
+1667048616 f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\funciones.h
+
+1667037034 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\reglamento.cpp
+	<iostream>
+	"rlutil.h"
+
+1667034424 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667036098 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1667047884 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\cartas y marcos.cpp
+	<iostream>
+	"rlutil.h"
+
