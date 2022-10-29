@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1666993005 source:c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1\funciones.cpp
+	<iostream>
+	"rlutil.h"
+
+1571584339 c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1667007028 source:c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1\main.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1666993057 c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1\funciones.h
+

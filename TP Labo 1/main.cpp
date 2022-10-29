@@ -1,7 +1,10 @@
 
 #include <iostream>
+#include<time.h>
 #include "rlutil.h"
 #include "funciones.h"
+
+
 
 using namespace std;
 void menu(int y);
@@ -454,6 +457,7 @@ int jugar(){
     int contRonda;
     int jugarSi;
     bool robar = false;
+    srand(time(NULL));
     rlutil::cls();
 
     rlutil::locate(30,11);
@@ -470,8 +474,8 @@ int jugar(){
     rlutil::locate(30,13);
     cout << nombre << " VS CPU" << endl;
     rlutil::locate(30,14);
-    cout << "RONDA #" << contRonda + 1 << endl; //falta contar cuando termina la ronda
-    // ACA IRIRA EL RANDOM Y HAY QUE GUARDARLO EN EL CHAR desafio[2];
+    /*cout << "RONDA #" << contRonda + 1 << endl; //falta contar cuando termina la ronda
+    // ACA IRIRA EL RANDOM Y HAY QUE GUARDARLO EN EL CHAR desafio[2];*/
     int valor=0;
 
     cout << endl;
@@ -479,7 +483,7 @@ int jugar(){
     cout << "SELECCIONANDO TU CARTA DESAFIO ......." << endl;
     //podriamos hacer un dibujo de una carta
     //hay que poner una pausa aca
-    desafio = rand() % 11;
+    desafio = 1+rand()%(11-1);
 
     cout << endl << endl;
     system("pause");
