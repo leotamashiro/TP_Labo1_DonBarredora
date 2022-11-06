@@ -1,0 +1,261 @@
+# depslib dependency file v1.0
+1666993005 source:c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1\funciones.cpp
+	<iostream>
+	"rlutil.h"
+
+1571584339 c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1667007028 source:c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1\main.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1666993057 c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1\funciones.h
+
+1667048158 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\funciones.cpp
+	<iostream>
+	<time.h>
+	<ctime>
+	<cstdlib>
+	<string>
+	"rlutil.h"
+
+1666993592 f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1667048156 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\main.cpp
+	<iostream>
+	<time.h>
+	"rlutil.h"
+	"funciones.h"
+
+1667048616 f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\funciones.h
+
+1667037034 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\reglamento.cpp
+	<iostream>
+	"rlutil.h"
+
+1667034424 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667036098 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1667047884 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp_labo1_donbarredora-main\tp labo 1\cartas y marcos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667048616 source:c:\users\ariel\documents\zoom\tp labo 1\tp labo 1\cartas y marcos.cpp
+	<iostream>
+	"rlutil.h"
+
+1666993592 c:\users\ariel\documents\zoom\tp labo 1\tp labo 1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1667034424 source:c:\users\ariel\documents\zoom\tp labo 1\tp labo 1\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667059274 source:c:\users\ariel\documents\zoom\tp labo 1\tp labo 1\funciones.cpp
+	<iostream>
+	<time.h>
+	<ctime>
+	<cstdlib>
+	<string>
+	"rlutil.h"
+
+1667057845 source:c:\users\ariel\documents\zoom\tp labo 1\tp labo 1\main.cpp
+	<iostream>
+	<time.h>
+	"rlutil.h"
+	"funciones.h"
+
+1667059274 c:\users\ariel\documents\zoom\tp labo 1\tp labo 1\funciones.h
+
+1667036098 source:c:\users\ariel\documents\zoom\tp labo 1\tp labo 1\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1667037034 source:c:\users\ariel\documents\zoom\tp labo 1\tp labo 1\reglamento.cpp
+	<iostream>
+	"rlutil.h"
+
+1667034216 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1\cartas y marcos.cpp
+	<iostream>
+	"rlutil.h"
+
+1666979192 f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1667088442 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1\funciones.cpp
+	<iostream>
+	<time.h>
+	<ctime>
+	<cstdlib>
+	<string>
+	"rlutil.h"
+
+1667021698 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1667088414 f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1\funciones.h
+
+1667022634 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1\reglamento.cpp
+	<iostream>
+	"rlutil.h"
+
+1667085850 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667104258 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1\main.cpp
+	<iostream>
+	<time.h>
+	"rlutil.h"
+	"funciones.h"
+
+1667464678 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1 (version 4)\cartas y marcos.cpp
+	<iostream>
+	"rlutil.h"
+
+1666979192 f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1 (version 4)\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1667104468 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1 (version 4)\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667428278 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1 (version 4)\funciones.cpp
+	<iostream>
+	<time.h>
+	<ctime>
+	<cstdlib>
+	<string>
+	"rlutil.h"
+
+1667022634 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1 (version 4)\reglamento.cpp
+	<iostream>
+	"rlutil.h"
+
+1667462916 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1 (version 4)\main.cpp
+	<iostream>
+	<time.h>
+	"rlutil.h"
+	"funciones.h"
+
+1667443954 f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1 (version 4)\funciones.h
+
+1667115760 source:f:\escritorio\facu\utn\laboratorio i ejercicios\proyecto jitsu\avance\tp labo 1 (version 4)\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1667464678 source:c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1 (version 5)\tp labo 1 (version 5)\cartas y marcos.cpp
+	<iostream>
+	"rlutil.h"
+
+1666979192 c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1 (version 5)\tp labo 1 (version 5)\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1667104468 source:c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1 (version 5)\tp labo 1 (version 5)\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667428278 source:c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1 (version 5)\tp labo 1 (version 5)\funciones.cpp
+	<iostream>
+	<time.h>
+	<ctime>
+	<cstdlib>
+	<string>
+	"rlutil.h"
+
+1667466944 source:c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1 (version 5)\tp labo 1 (version 5)\main.cpp
+	<iostream>
+	<time.h>
+	"rlutil.h"
+	"funciones.h"
+
+1667443954 c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1 (version 5)\tp labo 1 (version 5)\funciones.h
+
+1667115760 source:c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1 (version 5)\tp labo 1 (version 5)\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1667022634 source:c:\users\flory\desktop\tp_labo1_donbarredora\tp labo 1 (version 5)\tp labo 1 (version 5)\reglamento.cpp
+	<iostream>
+	"rlutil.h"
+

@@ -1,0 +1,30 @@
+/*
+Si es empate cobates devuelve 0
+Sino devuelve carta ganadora*/
+
+int contCartadasGanadasJugador=0; // Contador de Cantidad de Cartas Ganadas por Jugador
+int cotCartadasGanadasCPU=0; // Contador de Cantidad de Cartas Ganadas por CPU
+int ganadorasJugador [50] = {}; // Vector de las cartas Ganadoras del Jugador
+int ganadorasCPU [50] = {}; // Vector de las cartas Ganadoras del CPU
+int ganador;
+ganador = combate_f(carta_j1, carta_cpu);
+
+if (ganador == 0)
+{
+contCartadasGanadasJugador++;
+cotCartadasGanadasCPU++;
+ganadorasJugador [contCartadasGanadasJugador] = carta_j1;
+ganadorasCPU [cotCartadasGanadasCPU] = carta_cpu;
+}
+
+if (carta_j1 == ganador)
+{
+contCartadasGanadasJugador = contCartadasGanadasJugador+2;
+ganadorasJugador [contCartadasGanadasJugador] = carta_j1;
+}
+
+if (carta_cpu == ganador)
+{
+cotCartadasGanadasCPU = cotCartadasGanadasCPU+2;
+ganadorasCPU [cotCartadasGanadasCPU] = carta_cpu;
+}
