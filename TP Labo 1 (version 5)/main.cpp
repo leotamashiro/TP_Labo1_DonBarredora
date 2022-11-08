@@ -134,7 +134,7 @@ int jugar()
     cartas_elementos[x][0]=> jugador
     cartas_elementos[x][1]=> CPU
     */
-    int elementos[3][4][5]= {};// Mazo de cartas elemtos
+    int elementos[60]= {};// Mazo de cartas elemtos
     int manoJugador[4]; //Cartas en juego del jugador 1
     int manoPC[4]; //cartaas en juego de la CPU
     int contRonda=0; //cantidad de rondas
@@ -142,6 +142,10 @@ int jugar()
     int carta_jugada_Jugador, carta_jugada_PC;
     int contador_car_elementos=0; //ID cartas elementos
     bool robar = false, Game_over=false, control=false;
+    int manoGanadorasJugador [60]={}; // Vector de las cartas Ganadoras del Jugador
+    int manoGanadorasCPU [60]={}; // Vector de las cartas Ganadoras del CPU
+    int cartaRepartida;
+
     //************Posicion de cartas***************
     int x=10, y=22;
     //*********************************************
@@ -211,12 +215,25 @@ int jugar()
             }
         }
     }
+
+    for (int i=0; i<60; i++)
+    {
+        contador_car_elementos++;
+        elementos[i]=contador_car_elementos;
+    }
 //***********Fin ID*****************
 //***********Repartir cartas*********
     srand (time (NULL));
     do
     {
-        manoJugador[0]=1+rand()%(60);
+        cartaRepartida=1+rand()%(60);
+        for (int i; i<60; i++)
+        {
+            if(cartaRepartida!=0)
+            {
+                manoJugador[0]=cartaRepartida;
+            }
+        }
         manoJugador[1]=1+rand()%(60);
         manoJugador[2]=1+rand()%(60);
 
@@ -479,6 +496,7 @@ int jugar()
                         carta_jugada_PC=rand()%(3);
                         manoPC[carta_jugada_PC];
                         rlutil::locate(2,34);
+                        carta_jugada_Jugador = manoJugador[0]; // Le asigno a Carta jugada por Jugador, el numero de carta de la Mano Jugador
                         system("pause");
                         rlutil::cls();
                         robar = false;
@@ -509,6 +527,7 @@ int jugar()
                         carta_jugada_PC=rand()%(3);
                         manoPC[carta_jugada_PC];
                         rlutil::locate(2,34);
+                        carta_jugada_Jugador = manoJugador[1];
                         system("pause");
                         rlutil::cls();
                         robar = false;
@@ -539,6 +558,7 @@ int jugar()
                         carta_jugada_PC=rand()%(3);
                         manoPC[carta_jugada_PC];
                         rlutil::locate(2,34);
+                        carta_jugada_Jugador = manoJugador[2];
                         system("pause");
                         rlutil::cls();
                         robar = false;
@@ -561,6 +581,7 @@ int jugar()
                         y=22;
                         carta_jugada_PC=rand()%(3);
                         manoPC[carta_jugada_PC];
+                        carta_jugada_Jugador = manoJugador[3];
                         rlutil::locate(2,34);
                         system("pause");
                         rlutil::cls();
@@ -568,6 +589,13 @@ int jugar()
                         Game_over=false;
                         break;
                     }
+
+                        ///////////////////Combate//////////////////////
+
+                        int carta_Ganadora;
+                        cout << "carta jugada por jugador es: " << carta_jugada_Jugador << endl;
+                        cout << "carta jugada por pc es: " << carta_jugada_PC << endl;
+
                 }
             }
             break;
