@@ -213,6 +213,4 @@ int salir()
     }
     while(salir!=0);
 
-    rlutil::cls();
-
 }

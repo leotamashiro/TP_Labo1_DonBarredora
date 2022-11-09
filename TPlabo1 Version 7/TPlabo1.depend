@@ -1,0 +1,103 @@
+# depslib dependency file v1.0
+1667953890 source:c:\users\ar030212\desktop\proyects\tplabo1\funciones.cpp
+	<iostream>
+	<time.h>
+	<ctime>
+	<cstdlib>
+	<string>
+	"rlutil.h"
+	"Funciones.h"
+
+1667924058 c:\users\ar030212\desktop\proyects\tplabo1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1667952642 c:\users\ar030212\desktop\proyects\tplabo1\funciones.h
+
+1667924058 source:c:\users\ar030212\desktop\proyects\tplabo1\main.cpp
+	<iostream>
+	<time.h>
+	"rlutil.h"
+	"funciones.h"
+
+1667924199 source:c:\users\ar030212\desktop\proyects\tplabo1\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667952642 source:c:\users\ar030212\desktop\proyects\tplabo1\combate.cpp
+	<iostream>
+
+1667924351 source:c:\users\ar030212\desktop\proyects\tplabo1\cartas y marcos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667924418 source:c:\users\ar030212\desktop\proyects\tplabo1\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1667924563 source:c:\users\ar030212\desktop\proyects\tplabo1\reglamento.cpp
+	<iostream>
+	"rlutil.h"
+
+1667957844 source:c:\users\flory\desktop\labo1_cardjitsu-\tplabo1\cartas y marcos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667957844 c:\users\flory\desktop\labo1_cardjitsu-\tplabo1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1668030719 source:c:\users\flory\desktop\labo1_cardjitsu-\tplabo1\combate.cpp
+	<iostream>
+
+1667957844 source:c:\users\flory\desktop\labo1_cardjitsu-\tplabo1\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1668033501 source:c:\users\flory\desktop\labo1_cardjitsu-\tplabo1\funciones.cpp
+	<iostream>
+	<time.h>
+	<ctime>
+	<cstdlib>
+	<string>
+	"rlutil.h"
+	"Funciones.h"
+
+1668030536 c:\users\flory\desktop\labo1_cardjitsu-\tplabo1\funciones.h
+
+1667957844 source:c:\users\flory\desktop\labo1_cardjitsu-\tplabo1\main.cpp
+	<iostream>
+	<time.h>
+	"rlutil.h"
+	"funciones.h"
+
+1667957844 source:c:\users\flory\desktop\labo1_cardjitsu-\tplabo1\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1667957844 source:c:\users\flory\desktop\labo1_cardjitsu-\tplabo1\reglamento.cpp
+	<iostream>
+	"rlutil.h"
+
