@@ -19,6 +19,9 @@ int sacarCartaMano (int [], int , int);
 int devuelveColor(int );
 bool combateMismoElemento (int , int);
 bool dosCartasMismoNumero (int , int);
+bool validarSeleccion (int , int [], int);
+bool combinacionGanadora2 (int [], int , int );
+bool combinacionGanadora1 (int [], int , int );
 
 
 

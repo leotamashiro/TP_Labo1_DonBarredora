@@ -153,6 +153,15 @@ int sacarCartaMano (int vect[], int tam, int indice)
     return vect[tam];
 }
 
+bool validarSeleccion (int num, int vect[], int tam)
+{
+    if (vect[num]!=0)
+    {
+        return true;
+    }
+    return false;
+}
+
 int jugar()
 {
     int opc;
@@ -170,8 +179,8 @@ int jugar()
     cartas_elementos[x][1]=> CPU
     */
     int elementos[60]= {};// Mazo de cartas elemtos
-    int manoJugador[4]; //Cartas en juego del jugador 1
-    int manoPC[4]; //cartaas en juego de la CPU
+    int manoJugador[60]={}; //Cartas en juego del jugador 1
+    int manoPC[60]={}; //cartaas en juego de la CPU
     int contRonda=0; //cantidad de rondas
     int jugar_carta; //Carta seleccionada para jugar
     int carta_jugada_Jugador, carta_jugada_PC;
@@ -179,11 +188,11 @@ int jugar()
     int indiceCartaManoJugador=98;
     int contador_car_elementos=0; //ID cartas elementos
     bool robar = false, Game_over=false, control=false;
-    int manoGanadorasJugador [60]={}; // Vector de las cartas Ganadoras del Jugador
-    int manoGanadorasCPU [60]={}; // Vector de las cartas Ganadoras del CPU
+    //int manoGanadorasJugador [60]={}; // Vector de las cartas Ganadoras del Jugador
+    //int manoGanadorasCPU [60]={}; // Vector de las cartas Ganadoras del CPU
     int cartaRepartida;
     int cartaGanadora;
-    int contGanadasJugador=0, contGanadasCPU=0;
+    int contGanadasJugador=3, contGanadasCPU=3;
     int contJ1=0;
     bool winner = false;
     int color, tipo;
@@ -194,6 +203,7 @@ int jugar()
     bool mismoNumeroCPU=false, dosRondasCPU=false, mismoElementoCPU=false;
     bool desafioOver = false, rondaConsecutivaJugador=false, rondaConsecutivaCPU=false;
     bool primeraRondaCPU=true, primeraRondaJugador=true;
+
 
     //************Posicion de cartas***************
     int x=10, y=22;
@@ -361,7 +371,7 @@ int jugar()
 
             break;
         case 2:
-            for (int i=0; i<4; i++)
+            for (int i=0; i<60; i++)
             {
                 carta_elemento(manoJugador[i], x, y);
                 x+=15;
@@ -382,7 +392,7 @@ int jugar()
             {
                 rlutil::locate(4,32);
                 cout<< "Has tomado una carta del maszo";
-
+                ///roba del maso
                 cartaRepartida=repartirCarta(elementos, 60);
                 sacarCartaBarajada(cartaRepartida, elementos, 60);
 
@@ -399,7 +409,7 @@ int jugar()
                     primeraRondaJugador=false;
 
                 }
-
+                ///roba a partir de la 2da ronda
                 if(primeraRondaCPU==false)
                 {
                     manoPC[indiceCartaManoPc]=cartaRepartida;
@@ -409,7 +419,7 @@ int jugar()
                     manoJugador[indiceCartaManoJugador]=cartaRepartida;
                 }
 
-                for (int i=0; i<4; i++) //muestra todas las cartas, incluso la robada
+                for (int i=0; i<60; i++) //muestra todas las cartas, incluso la robada
                 {
                     carta_elemento(manoJugador[i], x, y);
                     x+=15;
@@ -429,9 +439,10 @@ int jugar()
             {
                 if(robar==true)
                 {
+                    bool existe=false;
                     do
                     {
-                        for (int i=0; i<4; i++)
+                        for (int i=0; i<60; i++)
                         {
                             carta_elemento(manoJugador[i], x, y);
                             x+=15;
@@ -440,7 +451,7 @@ int jugar()
                         x=10;
                         y=22;
                         rlutil::locate(4,32);
-                        cout<< "Presione el numero de la carta que desea jugar [1][2][3][4]: ";
+                        cout<< "Presione el numero de la carta que desea jugar: ";
                         cin>>jugar_carta;
                         if( cin.fail() || cin.bad())
                         {
@@ -451,7 +462,7 @@ int jugar()
                             system("pause");
                             rlutil::cls();
                         }
-                        else if(jugar_carta < 1 || jugar_carta > 4 )
+                        /*else if(jugar_carta < 1 || jugar_carta > 4 )
                         {
                             cin.clear();
                             cin.ignore(80, '\n');
@@ -459,14 +470,29 @@ int jugar()
                             cout << "\nDebe introducir un numero entre 1-4\n";
                             system("pause");
                             rlutil::cls();
-                        }
+                        }*/
+                        // valido si el numero de carta que elije jugar esta en el maso de jugador
+                        existe=validarSeleccion(jugar_carta, manoJugador, 60);
                     }
-                    while( cin.fail() || cin.bad());
+                    while( cin.fail() || cin.bad()||(existe==false));
 
                     x=10;
                     y=22;
 
-                    switch(jugar_carta)
+                    indiceCartaManoJugador=jugar_carta-1;//me guardo el indice de la carta que estoy jugando
+                    indiceCartaManoPc=rand()%(3); // me elije entre 0 y 3
+                    carta_jugada_PC = manoPC[indiceCartaManoPc];// 1 carta al azar de la mano PC
+                    sacarCartaMano(manoPC, 60, indiceCartaManoPc);
+                    carta_jugada_Jugador=manoJugador[indiceCartaManoJugador];// Le asigno a Carta jugada por Jugador, el numero de carta de la Mano Jugador
+                    sacarCartaMano(manoJugador, 60 ,indiceCartaManoJugador);
+                    rlutil::locate(2,34);
+                    system("pause");
+                    rlutil::cls();
+                    robar = false;
+                    Game_over=false;
+
+
+                    /*switch(jugar_carta)
                     {
                     case 1:
 
@@ -492,9 +518,9 @@ int jugar()
                         y=22;
                         indiceCartaManoPc=rand()%(3); // me elije entre 0 y 3
                         carta_jugada_PC = manoPC[indiceCartaManoPc];// 1 carta al azar de la mano PC
-                        sacarCartaMano(manoPC, 4, indiceCartaManoPc);
+                        sacarCartaMano(manoPC, 60, indiceCartaManoPc);
                         carta_jugada_Jugador = manoJugador[0]; // Le asigno a Carta jugada por Jugador, el numero de carta de la Mano Jugador
-                        sacarCartaMano(manoJugador, 4 ,0);
+                        sacarCartaMano(manoJugador, 60 ,0);
                         indiceCartaManoJugador=0;
                         rlutil::locate(2,34);
                         system("pause");
@@ -526,10 +552,10 @@ int jugar()
                         y=22;
                         indiceCartaManoPc=rand()%(3); // me elije entre 0 y 3
                         carta_jugada_PC = manoPC[indiceCartaManoPc];// 1 carta al azar de la mano PC
-                        sacarCartaMano(manoPC, 4, indiceCartaManoPc);
+                        sacarCartaMano(manoPC, 60, indiceCartaManoPc);
                         rlutil::locate(2,34);
                         carta_jugada_Jugador = manoJugador[1];
-                        sacarCartaMano(manoJugador, 4, 1);
+                        sacarCartaMano(manoJugador, 60, 1);
                         indiceCartaManoJugador=1;
                         system("pause");
                         rlutil::cls();
@@ -560,10 +586,10 @@ int jugar()
                         y=22;
                         indiceCartaManoPc=rand()%(3); // me elije entre 0 y 3
                         carta_jugada_PC = manoPC[indiceCartaManoPc];// 1 carta al azar de la mano PC
-                        sacarCartaMano(manoPC, 4, indiceCartaManoPc);
+                        sacarCartaMano(manoPC, 60, indiceCartaManoPc);
                         rlutil::locate(2,34);
                         carta_jugada_Jugador = manoJugador[2];
-                        sacarCartaMano(manoJugador, 4, 2);
+                        sacarCartaMano(manoJugador, 60, 2);
                         indiceCartaManoJugador=2;
                         system("pause");
                         rlutil::cls();
@@ -587,17 +613,17 @@ int jugar()
                         y=22;
                         indiceCartaManoPc=rand()%(3); // me elije entre 0 y 3
                         carta_jugada_PC = manoPC[indiceCartaManoPc];// 1 carta al azar de la mano PC
-                        sacarCartaMano(manoPC, 4, indiceCartaManoPc);
+                        sacarCartaMano(manoPC, 60, indiceCartaManoPc);
                         carta_jugada_Jugador = manoJugador[3];
                         indiceCartaManoJugador=3;
-                        sacarCartaMano(manoJugador, 4, 3);
+                        sacarCartaMano(manoJugador, 60, 3);
                         rlutil::locate(2,34);
                         system("pause");
                         rlutil::cls();
                         robar = false;
                         Game_over=false;
                         break;
-                    }
+                    }*/
 
                         ///////////////////Combate//////////////////////
                         //sacarCartaMano(manoJugador, 4, indiceCartaManoJugador);
@@ -611,10 +637,10 @@ int jugar()
                         ///Empate
                         if (cartaGanadora == -1)
                         {
-                            manoGanadorasCPU[contGanadasCPU]= carta_jugada_PC;
                             contGanadasCPU++;
-                            manoGanadorasJugador[contGanadasJugador]= carta_jugada_Jugador;
+                            manoPC[contGanadasCPU]= carta_jugada_PC;
                             contGanadasJugador++;
+                            manoJugador[contGanadasJugador]= carta_jugada_Jugador;
                             rondaConsecutivaJugador=false;
                             rondaConsecutivaCPU=false;
                         }
@@ -622,13 +648,12 @@ int jugar()
                         ///Gana Jugador
                         if (cartaGanadora==carta_jugada_Jugador)
                         {
-                            manoGanadorasJugador[contGanadasJugador]= carta_jugada_Jugador;
                             contGanadasJugador++;
-                            manoGanadorasJugador[contGanadasJugador]= carta_jugada_PC;
+                            manoJugador[contGanadasJugador]= carta_jugada_Jugador;
                             contGanadasJugador++;
+                            manoJugador[contGanadasJugador]= carta_jugada_PC;
 
                             winner = true;
-
                             color = devuelveColor(cartaGanadora);
 
                             if(color == 1){//si la carta ganada es Roja
@@ -710,12 +735,12 @@ int jugar()
                         ///Gana CPU
                         if (cartaGanadora==carta_jugada_PC)
                         {
-                            manoGanadorasCPU[contGanadasCPU]= carta_jugada_PC;
                             contGanadasCPU++;
-                            manoGanadorasCPU[contGanadasCPU]= carta_jugada_Jugador;
+                            manoPC[contGanadasCPU]= carta_jugada_PC;
                             contGanadasCPU++;
-                            winner = false;
+                            manoPC[contGanadasCPU]= carta_jugada_Jugador;
 
+                            winner = false;
                             color = devuelveColor(cartaGanadora);
 
                             if(color == 1){//si la carta ganada es Roja
@@ -789,6 +814,27 @@ int jugar()
                                 rondaConsecutivaCPU=true;
                                 rondaConsecutivaJugador=false;
                         }
+
+                         ///Solo sirve para ver que guarda en el vector de ganadoras
+                        /*cout << "Ganadoras CPU";
+                        for (int aux=0; aux<60; aux++)
+                        {
+                            if (manoGanadorasCPU[aux]!=0)
+                            {
+                                cout << "|||" <<manoGanadorasCPU[aux];
+                            }
+                        }
+                        cout << "\n";
+
+                        cout << "Ganadoras Jugador";
+                        for (int aux=0; aux<60; aux++)
+                        {
+                            if (manoGanadorasJugador[aux]!=0)
+                            {
+                                cout << "|||" <<manoGanadorasJugador[aux];
+                            }
+                        }
+                        cout << "\n";*/
                 }
             }
             break;

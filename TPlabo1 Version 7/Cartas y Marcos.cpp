@@ -407,7 +407,7 @@ void carta_elemento(int n, int x, int y)
     if (n==6)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -436,7 +436,7 @@ void carta_elemento(int n, int x, int y)
     if (n==7)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -465,7 +465,7 @@ void carta_elemento(int n, int x, int y)
     if (n==8)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -494,7 +494,7 @@ void carta_elemento(int n, int x, int y)
     if (n==9)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -523,7 +523,7 @@ void carta_elemento(int n, int x, int y)
     if (n==10)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -987,7 +987,7 @@ void carta_elemento(int n, int x, int y)
     if (n==26)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -1016,7 +1016,7 @@ void carta_elemento(int n, int x, int y)
     if (n==27)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -1045,7 +1045,7 @@ void carta_elemento(int n, int x, int y)
     if (n==28)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -1074,7 +1074,7 @@ void carta_elemento(int n, int x, int y)
     if (n==29)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -1103,7 +1103,7 @@ void carta_elemento(int n, int x, int y)
     if (n==30)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -1567,7 +1567,7 @@ void carta_elemento(int n, int x, int y)
     if (n==46)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -1596,7 +1596,7 @@ void carta_elemento(int n, int x, int y)
     if (n==47)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -1625,7 +1625,7 @@ void carta_elemento(int n, int x, int y)
     if (n==48)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -1654,7 +1654,7 @@ void carta_elemento(int n, int x, int y)
     if (n==49)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);
@@ -1683,7 +1683,7 @@ void carta_elemento(int n, int x, int y)
     if (n==50)
     {
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setBackgroundColor(rlutil::GREY);
         rlutil::locate(x,y);
         printf("%c%c%c%c%c%c%c%c%c",201,205,205,205,205,205,205,205,187);
         rlutil::locate(x,y+1);

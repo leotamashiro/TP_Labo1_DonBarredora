@@ -34,7 +34,9 @@
 		</Compiler>
 		<Unit filename="Cartas y Marcos.cpp" />
 		<Unit filename="Combate.cpp" />
+		<Unit filename="CombinacionGanadora.cpp" />
 		<Unit filename="Creditos.cpp" />
+		<Unit filename="Jugar.cpp" />
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Reglamento.cpp" />
 		<Unit filename="funciones.cpp" />
