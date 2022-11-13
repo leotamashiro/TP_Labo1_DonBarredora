@@ -131,8 +131,7 @@ int repartirCarta (int vect[], int tam)
     bool control=true;
     int carta;
     srand (time (NULL));
-
-    while (control!=false)
+    do
     {
         carta=1+rand()%(60);
         for (int i=0; i<tam; i++)
@@ -143,7 +142,21 @@ int repartirCarta (int vect[], int tam)
                 return carta;
             }
         }
-    }
+    }while (control!=false);
+
+
+    /*while (control!=false)
+    {
+        carta=1+rand()%(60);
+        for (int i=0; i<tam; i++)
+        {
+            if (vect[carta-1]!=0)
+            {
+                control=false;
+                return carta;
+            }
+        }
+    }*/
 }
 
 ///Saco Carta Jugada de la Mano
@@ -187,7 +200,7 @@ int jugar()
     int indiceCartaManoPc=99;
     int indiceCartaManoJugador=98;
     int contador_car_elementos=0; //ID cartas elementos
-    bool robar = false, Game_over=false, control=false;
+    bool robar = false, control=false;
     //int manoGanadorasJugador [60]={}; // Vector de las cartas Ganadoras del Jugador
     //int manoGanadorasCPU [60]={}; // Vector de las cartas Ganadoras del CPU
     int cartaRepartida;
@@ -201,8 +214,12 @@ int jugar()
     bool mismoNumero=false, dosRondas=false, mismoElemento=false;
     int contRojaCPU=0, contAmarillaCPU=0, contVerdeCPU=0, contAzulCPU=0;
     bool mismoNumeroCPU=false, dosRondasCPU=false, mismoElementoCPU=false;
-    bool desafioOver = false, rondaConsecutivaJugador=false, rondaConsecutivaCPU=false;
+    bool rondaConsecutivaJugador=false, rondaConsecutivaCPU=false;
     bool primeraRondaCPU=true, primeraRondaJugador=true;
+    bool combGanadoraUno=false, combGanadoraDos=false;
+    bool desafioOverJugador = false, desafioOverPC = false;
+    //bool Game_over=false;
+    bool Game_over_Jugador=false, Game_over_PC=false;
 
 
     //************Posicion de cartas***************
@@ -271,16 +288,16 @@ int jugar()
 //***********Fin ID*****************
 //***********Repartir cartas*********
 
-    for (int i=0; i<3; i++)
+    for (int a=0; a<3; a++) //Reparte la Mano al Jugador
     {
         cartaRepartida=repartirCarta(elementos, 60);
-        manoJugador[i]=cartaRepartida;
+        manoJugador[a]=cartaRepartida;
         sacarCartaBarajada(cartaRepartida,elementos,60);
     }
-    for (int i=0; i<3; i++)
+    for (int l=0; l<3; l++)//Reparte la mano a la PC
     {
         cartaRepartida=repartirCarta(elementos, 60);
-        manoPC[i]=cartaRepartida;
+        manoPC[l]=cartaRepartida;
         sacarCartaBarajada(cartaRepartida,elementos,60);
     }
 
@@ -367,11 +384,11 @@ int jugar()
             rlutil::locate(2,34);
             system("pause");
             rlutil::cls();
-            Game_over=false;
+            //Game_over=false;
 
             break;
         case 2:
-            for (int i=0; i<60; i++)
+            for (int i=0; i<contGanadasJugador+1; i++)
             {
                 carta_elemento(manoJugador[i], x, y);
                 x+=15;
@@ -383,7 +400,7 @@ int jugar()
             rlutil::locate(2,34);
             system("pause");
             rlutil::cls();
-            Game_over=false;
+            //Game_over=false;
 
             break;
         case 3:
@@ -419,7 +436,7 @@ int jugar()
                     manoJugador[indiceCartaManoJugador]=cartaRepartida;
                 }
 
-                for (int i=0; i<60; i++) //muestra todas las cartas, incluso la robada
+                for (int i=0; i<contGanadasJugador+1; i++) //muestra todas las cartas, incluso la robada
                 {
                     carta_elemento(manoJugador[i], x, y);
                     x+=15;
@@ -433,7 +450,7 @@ int jugar()
                 system("pause");
                 rlutil::cls();
                 robar = true;
-                Game_over=false;
+                //Game_over=false;
             }
             else
             {
@@ -442,7 +459,7 @@ int jugar()
                     bool existe=false;
                     do
                     {
-                        for (int i=0; i<60; i++)
+                        for (int i=0; i<contGanadasJugador+1; i++)
                         {
                             carta_elemento(manoJugador[i], x, y);
                             x+=15;
@@ -489,7 +506,7 @@ int jugar()
                     system("pause");
                     rlutil::cls();
                     robar = false;
-                    Game_over=false;
+                    //Game_over=false;
 
 
                     /*switch(jugar_carta)
@@ -676,54 +693,54 @@ int jugar()
                             switch(desafio[0]){
                             case 1:
                                 if(carta_jugada_PC>=21 & carta_jugada_PC<=40){
-                                    desafioOver=true;
+                                    desafioOverJugador=true;
                                 }
                                 break;
                             case 2:
                                 if(carta_jugada_PC>=1 & carta_jugada_PC<=20){
-                                    desafioOver=true;
+                                    desafioOverJugador=true;
                                 }
                                 break;
                             case 3:
                                 if(carta_jugada_PC>=41 & carta_jugada_PC<=60){
-                                    desafioOver=true;
+                                    desafioOverJugador=true;
                                 }
                                 break;
                             case 4:
                                 if(contRoja == 2){
-                                    desafioOver=true;
+                                    desafioOverJugador=true;
                                 }
                                 break;
                             case 5:
                                 if(contAmarilla == 2){
-                                    desafioOver=true;
+                                    desafioOverJugador=true;
                                 }
                                 break;
                             case 6:
                                 if(contVerde == 2){
-                                    desafioOver=true;
+                                    desafioOverJugador=true;
                                 }
                                 break;
                             case 7:
                                 if(contAzul == 2){
-                                    desafioOver=true;
+                                    desafioOverJugador=true;
                                 }
                                 break;
                             case 8:
                                 mismoElemento = combateMismoElemento (carta_jugada_Jugador, carta_jugada_PC);
                                 if(mismoElemento == true){ //ganar una cartas
-                                    desafioOver=true;
+                                    desafioOverJugador=true;
                                 }
                                 break;
                             case 9:
                                 mismoNumero=dosCartasMismoNumero(carta_jugada_Jugador, carta_jugada_PC);
                                 if(mismoNumero == true){ //ganar dos cartas
-                                    desafioOver=true;
+                                    desafioOverJugador=true;
                                 }
                                 break;
                             case 10:
                                 if(rondaConsecutivaJugador == true){ //dos rondas consecutivas
-                                   desafioOver=true;
+                                   desafioOverJugador=true;
                                 }
                                 break;
                                 }
@@ -759,54 +776,54 @@ int jugar()
                             switch(desafio[1]){
                             case 1:
                                 if(carta_jugada_Jugador>=21 & carta_jugada_Jugador<=40){
-                                    desafioOver=true;
+                                    desafioOverPC=true;
                                 }
                                 break;
                             case 2:
                                 if(carta_jugada_Jugador>=1 & carta_jugada_Jugador<=20){
-                                    desafioOver=true;
+                                    desafioOverPC=true;
                                 }
                                 break;
                             case 3:
                                 if(carta_jugada_Jugador>=41 & carta_jugada_Jugador<=60){
-                                    desafioOver=true;
+                                    desafioOverPC=true;
                                 }
                                 break;
                             case 4:
                                 if(contRojaCPU == 2){
-                                    desafioOver=true;
+                                    desafioOverPC=true;
                                 }
                                 break;
                             case 5:
                                 if(contAmarillaCPU == 2){
-                                    desafioOver=true;
+                                    desafioOverPC=true;
                                 }
                                 break;
                             case 6:
                                 if(contVerdeCPU == 2){
-                                    desafioOver=true;
+                                    desafioOverPC=true;
                                 }
                                 break;
                             case 7:
                                 if(contAzulCPU == 2){
-                                    desafioOver=true;
+                                    desafioOverPC=true;
                                 }
                                 break;
                             case 8:
                                 mismoElemento = combateMismoElemento (carta_jugada_Jugador, carta_jugada_PC);
                                 if(mismoElementoCPU == true){ //ganar una cartas
-                                    desafioOver=true;
+                                    desafioOverPC=true;
                                 }
                                 break;
                             case 9:
                                 mismoNumero=dosCartasMismoNumero(carta_jugada_Jugador, carta_jugada_PC);
                                 if(mismoNumeroCPU == true){ //ganar dos cartas
-                                    desafioOver=true;
+                                    desafioOverPC=true;
                                 }
                                 break;
                             case 10:
                                 if(rondaConsecutivaCPU == true){ //dos rondas consecutivas
-                                   desafioOver=true;
+                                   desafioOverPC=true;
                                 }
                                 break;
                                 }
@@ -814,6 +831,14 @@ int jugar()
                                 rondaConsecutivaCPU=true;
                                 rondaConsecutivaJugador=false;
                         }
+
+                        /*///Muestro Matriz del Mazo
+                        system("cls");
+                        cout << "Muestro matriz de elemtos: " << "\n";
+                        for (int g=0; g<60;g++)
+                        {
+                            cout << elementos [g] << "|";
+                        }*/
 
                          ///Solo sirve para ver que guarda en el vector de ganadoras
                         /*cout << "Ganadoras CPU";
@@ -845,12 +870,21 @@ int jugar()
             break;
 
         }
+        combGanadoraUno=combinacionGanadora1(manoJugador, contGanadasJugador);
+        combGanadoraDos=combinacionGanadora2(manoJugador, contGanadasJugador);
+        if ((combGanadoraUno==true) || (combGanadoraDos==true))
+        {
+            Game_over_Jugador==true;
+        }
+        combGanadoraUno=combinacionGanadora1(manoPC, contGanadasCPU);
+        combGanadoraDos=combinacionGanadora2(manoJugador, contGanadasCPU);
 
-
-
-
+        if ((combGanadoraUno==true) || (combGanadoraDos==true))
+        {
+            Game_over_PC==true;
+        }
     }
-    while((Game_over==false)&&(desafioOver ==false));
+    while(  ( (Game_over_Jugador==false) && (desafioOverJugador==false) )  ||  ( (Game_over_PC==false) && (desafioOverPC==false) )  );
 
     rlutil::cls();
     if(winner == false){

@@ -7,8 +7,11 @@
 
 using namespace std;
 
+
+/// Ver si solo es de las cartas Ganadas los for tienen que empezar en i=4
+
 //combinacionGanadora2 == true Gano!
-bool combinacionGanadora2 (int vec[], int tam, int cont)
+bool combinacionGanadora2 (int vec[], int cont)
 {
     int fuego=0, nieve=0, agua=0;
     for (int i=0; i<cont; i++)
@@ -40,7 +43,7 @@ bool combinacionGanadora2 (int vec[], int tam, int cont)
 }
 
 //combinacionGanadora1 == true Gano!
-bool combinacionGanadora1 (int vec[], int tam, int cont)
+bool combinacionGanadora1 (int vec[], int cont)
 {
     for (int i=0; i<cont; i++)
     {
