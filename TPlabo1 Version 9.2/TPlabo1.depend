@@ -251,7 +251,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1668030719 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.1\combate.cpp
+1668637233 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.1\combate.cpp
 	<iostream>
 
 1668294803 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.1\combinacionganadora.cpp
@@ -262,13 +262,13 @@
 	<string>
 	"Funciones.h"
 
-1668468567 c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.1\funciones.h
+1668637233 c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.1\funciones.h
 
 1667957844 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.1\creditos.cpp
 	<iostream>
 	"rlutil.h"
 
-1668477962 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.1\funciones.cpp
+1668642752 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.1\funciones.cpp
 	<iostream>
 	<time.h>
 	<ctime>
@@ -292,6 +292,68 @@
 	<iostream>
 
 1667957844 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.1\reglamento.cpp
+	<iostream>
+	"rlutil.h"
+
+1668219454 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\cartas y marcos.cpp
+	<iostream>
+	"rlutil.h"
+
+1667957844 c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1668637233 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\combate.cpp
+	<iostream>
+
+1668294803 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\combinacionganadora.cpp
+	<iostream>
+	<time.h>
+	<ctime>
+	<cstdlib>
+	<string>
+	"Funciones.h"
+
+1668637233 c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\funciones.h
+
+1667957844 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1668644884 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\funciones.cpp
+	<iostream>
+	<time.h>
+	<ctime>
+	<cstdlib>
+	<string>
+	"rlutil.h"
+	"Funciones.h"
+
+1667957844 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\main.cpp
+	<iostream>
+	<time.h>
+	"rlutil.h"
+	"funciones.h"
+
+1667957844 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+
+1668468552 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\mismonumero.cpp
+	<iostream>
+
+1667957844 source:c:\users\flory\desktop\tp_labo1_donbarredora\tplabo1 version 9.2\reglamento.cpp
 	<iostream>
 	"rlutil.h"
 

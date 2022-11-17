@@ -60,7 +60,6 @@ void selector(int y)
                 cout<< " " <<endl;
                 rlutil::locate(49,10+y);
                 cout<< " " <<endl;
-
             }
             else
             {
@@ -214,9 +213,12 @@ int jugar()
     bool desafioOverJugador = false, desafioOverPC = false;
     int dos_iguales_jugador[5] = {}, dos_iguales_cpu[5] = {};
     //bool Game_over=false;
+    int queElementoCPU, queElementoJugador;
     int rondaGanadaJugador=0, rondaGanadaElemtoJugador=0;
     int rondaGanadaCPU=0, rondaGanadaElementoCPU=0;
     int ptoTotalJugador=0, ptoTotalCPU=0, ptoCombGanadoraJugador=0, ptoCombGanadoraCPU=0, ptoDesafioJugador=0, ptoDesafioCPU=0;
+    bool ganoJugador=false, ganoCPU=false; // variables que cree para probar
+    bool flagWINNER=false;
 
 
     //************Posicion de cartas***************
@@ -492,6 +494,8 @@ int jugar()
                     sacarCartaMano(manoPC, 60, indiceCartaManoPc);
                     carta_jugada_Jugador=manoJugador[indiceCartaManoJugador];// Le asigno a Carta jugada por Jugador, el numero de carta de la Mano Jugador
                     sacarCartaMano(manoJugador, 60 ,indiceCartaManoJugador);
+                    queElementoCPU=elementoCarta(carta_jugada_PC);
+                    queElementoJugador=elementoCarta(carta_jugada_Jugador);
                     rlutil::locate(2,34);
                     system("pause");
                     rlutil::cls();
@@ -536,9 +540,20 @@ int jugar()
                                 rondaGanadaJugador++;
                             }
 
-                            winner = true; // para ver quien gano
-
-                            color = devuelveColor(cartaGanadora);
+                            color = devuelveColor(carta_jugada_Jugador);
+                            if(color == 1){//si la carta ganada es Roja
+                                contRoja++;
+                            }
+                            if(color == 2){//si la carta ganada es amarilla
+                                contAmarilla++;
+                            }
+                            if(color == 3){//si la carta ganada es verde
+                                contVerde++;
+                            }
+                            if(color == 4){//si la carta ganada es azul
+                                contAzul++;
+                            }
+                            color = devuelveColor(carta_jugada_PC);
                             if(color == 1){//si la carta ganada es Roja
                                 contRoja++;
                             }
@@ -552,62 +567,77 @@ int jugar()
                                 contAzul++;
                             }
 
+
                             switch(desafio[0]){
-                            case 1:
-                                if( (carta_jugada_PC>=21)&&(carta_jugada_PC<=40) || (carta_jugada_Jugador>=21)&&(carta_jugada_Jugador<=40) ) {
+                            case 1://Nieve
+                                if ((queElementoCPU==2)||(queElementoJugador==2)){
                                     desafioOverJugador=true;
+                                    cout << "Jugador cumple desafio";
+                                }
+
+                                break;
+                            case 2://Fuego
+                                if ((queElementoCPU==1)||(queElementoJugador==1)){
+                                    desafioOverJugador=true;
+                                    cout << "Jugador cumple desafio";
                                 }
                                 break;
-                            case 2:
-                                if( (carta_jugada_PC>=1)&&(carta_jugada_PC<=20) || (carta_jugada_Jugador>=1)&&(carta_jugada_Jugador<=20) ){
+                            case 3://Agua
+                                if ((queElementoCPU==3)||(queElementoJugador==3)){
                                     desafioOverJugador=true;
-                                }
-                                break;
-                            case 3:
-                                if( (carta_jugada_PC>=41)&&(carta_jugada_PC<=60) || (carta_jugada_Jugador>=41)&&(carta_jugada_Jugador<=60) ){
-                                    desafioOverJugador=true;
+                                    cout << "Jugador cumple desafio";
                                 }
                                 break;
                             case 4:
-                                if(contRoja == 2){
+                                if(contRoja >= 2){
                                     desafioOverJugador=true;
+                                    cout << "Jugador cumple desafio";
                                 }
                                 break;
                             case 5:
-                                if(contAmarilla == 2){
+                                if(contAmarilla >= 2){
                                     desafioOverJugador=true;
+                                    cout << "Jugador cumple desafio";
                                 }
                                 break;
                             case 6:
-                                if(contVerde == 2){
+                                if(contVerde >= 2){
                                     desafioOverJugador=true;
+                                    cout << "Jugador cumple desafio";
                                 }
                                 break;
                             case 7:
-                                if(contAzul == 2){
+                                if(contAzul >= 2){
                                     desafioOverJugador=true;
+                                    cout << "Jugador cumple desafio";
                                 }
                                 break;
                             case 8:
                                 mismoElemento = combateMismoElemento (carta_jugada_Jugador, carta_jugada_PC);
                                 if(mismoElemento == true){ //ganar una cartas
                                     desafioOverJugador=true;
+                                    cout << "Jugador cumple desafio";
                                 }
                                 break;
                             case 9:
                                 mismoNumero = dosCartasMismoNumero(carta_jugada_Jugador, dos_iguales_jugador);
                                 if(mismoNumero == true){ //ganar dos cartas
                                     desafioOverJugador=true;
+                                    cout << "Jugador cumple desafio";
                                 }
                                 break;
                             case 10:
                                 if(rondaConsecutivaJugador == true){ //dos rondas consecutivas
                                    desafioOverJugador=true;
+                                   cout << "Jugador cumple desafio";
                                 }
                                 break;
                                 }
-                                rondaConsecutivaJugador=true;
-                                rondaConsecutivaCPU=false;
+
+                            rondaConsecutivaJugador=true;
+                            rondaConsecutivaCPU=false;
+                            winner = true; // para ver quien gano
+
                         }
 
                         ///Gana CPU
@@ -628,78 +658,103 @@ int jugar()
                             {
                                 rondaGanadaCPU++;
                             }
-                            winner = false;
 
-                            color = devuelveColor(cartaGanadora);
+                            color = devuelveColor(carta_jugada_Jugador);
                             if(color == 1){//si la carta ganada es Roja
-                                contRojaCPU++;
+                                contRoja++;
                             }
                             if(color == 2){//si la carta ganada es amarilla
-                                contAmarillaCPU++;
+                                contAmarilla++;
                             }
                             if(color == 3){//si la carta ganada es verde
-                                contVerdeCPU++;
+                                contVerde++;
                             }
                             if(color == 4){//si la carta ganada es azul
-                                contAzulCPU++;
+                                contAzul++;
+                            }
+                            color = devuelveColor(carta_jugada_PC);
+                            if(color == 1){//si la carta ganada es Roja
+                                contRoja++;
+                            }
+                            if(color == 2){//si la carta ganada es amarilla
+                                contAmarilla++;
+                            }
+                            if(color == 3){//si la carta ganada es verde
+                                contVerde++;
+                            }
+                            if(color == 4){//si la carta ganada es azul
+                                contAzul++;
                             }
 
                             switch(desafio[1]){
-                            case 1:
-                                if( (carta_jugada_PC>=21)&&(carta_jugada_PC<=40) || (carta_jugada_Jugador>=21)&&(carta_jugada_Jugador<=40) ){
+                            case 1://Nieve
+                                if ((queElementoCPU==2)||(queElementoJugador==2)){
                                     desafioOverPC=true;
+                                    cout << "CPU cumple desafio";
+                                }
+
+                                break;
+                            case 2://Fuego
+                                if ((queElementoCPU==1)||(queElementoJugador==1)){
+                                    desafioOverPC=true;
+                                    cout << "CPU cumple desafio";
                                 }
                                 break;
-                            case 2:
-                                if( (carta_jugada_PC>=1)&&(carta_jugada_PC<=20) || (carta_jugada_Jugador>=1)&&(carta_jugada_Jugador<=20) ){
+                            case 3://Agua
+                                if ((queElementoCPU==3)||(queElementoJugador==3)){
                                     desafioOverPC=true;
-                                }
-                                break;
-                            case 3:
-                                if( (carta_jugada_PC>=41)&&(carta_jugada_PC<=60) || (carta_jugada_Jugador>=41)&&(carta_jugada_Jugador<=60) ){
-                                    desafioOverPC=true;
+                                    cout << "CPU cumple desafio";
                                 }
                                 break;
                             case 4:
-                                if(contRojaCPU == 2){
+                                if(contRojaCPU >= 2){
                                     desafioOverPC=true;
+                                    cout << "CPU cumple desafio";
                                 }
                                 break;
                             case 5:
-                                if(contAmarillaCPU == 2){
+                                if(contAmarillaCPU >= 2){
                                     desafioOverPC=true;
+                                    cout << "CPU cumple desafio";
                                 }
                                 break;
                             case 6:
-                                if(contVerdeCPU == 2){
+                                if(contVerdeCPU >= 2){
                                     desafioOverPC=true;
+                                    cout << "CPU cumple desafio";
                                 }
                                 break;
                             case 7:
-                                if(contAzulCPU == 2){
+                                if(contAzulCPU >= 2){
                                     desafioOverPC=true;
+                                    cout << "CPU cumple desafio";
                                 }
                                 break;
                             case 8:
                                 mismoElemento = combateMismoElemento (carta_jugada_Jugador, carta_jugada_PC);
                                 if(mismoElementoCPU == true){ //ganar una cartas
                                     desafioOverPC=true;
+                                    cout << "CPU cumple desafio";
                                 }
                                 break;
                             case 9:
                                 mismoNumero=dosCartasMismoNumero(carta_jugada_PC, dos_iguales_cpu);
                                 if(mismoNumeroCPU == true){ //ganar dos cartas
                                     desafioOverPC=true;
+                                    cout << "CPU cumple desafio";
                                 }
                                 break;
                             case 10:
                                 if(rondaConsecutivaCPU == true){ //dos rondas consecutivas
                                    desafioOverPC=true;
+                                   cout << "CPU cumple desafio";
                                 }
                                 break;
                                 }
-                                rondaConsecutivaCPU=true;
-                                rondaConsecutivaJugador=false;
+
+                            rondaConsecutivaCPU=true;
+                            rondaConsecutivaJugador=false;
+                            winner = false;
                         }
                 }
             }
@@ -711,9 +766,11 @@ int jugar()
             break;
 
         }
+        cout << "flag desafio jugador " << desafioOverJugador;
+        cout << "  flag desafio CPU" << desafioOverPC << "\n";
         combGanadoraUno=combinacionGanadora1(manoJugador, contGanadasJugador);
         combGanadoraDos=combinacionGanadora2(manoJugador, contGanadasJugador);
-        if ((combGanadoraUno==true) || (combGanadoraDos==true))
+        if ((combGanadoraUno==true) || (combGanadoraDos==true)) // se cuple comb ganadador para jugador?
         {
             Game_over_Jugador==true;
             cout << "Jugador cumple combinacion ganadora";
@@ -721,14 +778,41 @@ int jugar()
 
         combGanadoraUno=combinacionGanadora1(manoPC, contGanadasCPU);
         combGanadoraDos=combinacionGanadora2(manoJugador, contGanadasCPU);
-
-        if ((combGanadoraUno==true) || (combGanadoraDos==true))
+        if ((combGanadoraUno==true) || (combGanadoraDos==true))// se cuple comb ganadador para CPU?
         {
             Game_over_PC==true;
             cout << "CPU cumple combinacion ganadora";
         }
+
+        /// if de prueba
+        if (Game_over_Jugador==true)
+        {
+            if (desafioOverJugador==true)
+            {
+                ganoJugador=true;
+                cout << "\n" <<"entra a gano jugador";
+            }
+        }
+
+        if (Game_over_PC==true)
+        {
+            if (desafioOverPC==true)
+            {
+                ganoCPU==true;
+                cout << "\n" << "entra a gano CPU";
+            }
+        }
+        if ((ganoCPU==false || ganoJugador==false))
+        {
+            flagWINNER=false;
+        }
+        else
+        {
+            flagWINNER=true;
+        }
+
     }
-    while(  ( (Game_over_Jugador==false)&&(desafioOverJugador==false) ) || ( (Game_over_PC==false)&&(desafioOverPC==false) ) );
+    while(flagWINNER=false);
 
     rondaGanadaElemtoJugador = rondaGanadaElemtoJugador*5;//ptos de rondaGanadaElemtoJugador se muestra en Jugador
     rondaGanadaElementoCPU = rondaGanadaElementoCPU*5;

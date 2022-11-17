@@ -225,43 +225,43 @@ int combate_f(int carta1, int carta2)
 
 int devuelveColor(int cartaGanadora){
     //ROJO
-    if(cartaGanadora>=1 & cartaGanadora<=5){
+    if(cartaGanadora>=1 && cartaGanadora<=5){
             return 1;
     }
-    if(cartaGanadora>=21 & cartaGanadora<=25){
+    if(cartaGanadora>=21 && cartaGanadora<=25){
             return 1;
     }
-    if(cartaGanadora>=41 & cartaGanadora<=45){
+    if(cartaGanadora>=41 && cartaGanadora<=45){
             return 1;
     }
     //AMARILLO
-    if(cartaGanadora>=6 & cartaGanadora<=10){
+    if(cartaGanadora>=6 && cartaGanadora<=10){
             return 2;
     }
-    if(cartaGanadora>=26 & cartaGanadora<=30){
+    if(cartaGanadora>=26 && cartaGanadora<=30){
             return 2;
     }
-    if(cartaGanadora>=46 & cartaGanadora<=50){
+    if(cartaGanadora>=46 && cartaGanadora<=50){
             return 2;
     }
     //VERDE
-    if(cartaGanadora>=11 & cartaGanadora<=15){
+    if(cartaGanadora>=11 && cartaGanadora<=15){
             return 3;
     }
-    if(cartaGanadora>=31 & cartaGanadora<=35){
+    if(cartaGanadora>=31 && cartaGanadora<=35){
             return 3;
     }
-    if(cartaGanadora>=51 & cartaGanadora<=55){
+    if(cartaGanadora>=51 && cartaGanadora<=55){
             return 3;
     }
     //AZUL
-    if(cartaGanadora>=16 & cartaGanadora<=20){
+    if(cartaGanadora>=16 && cartaGanadora<=20){
             return 4;
     }
-    if(cartaGanadora>=36 & cartaGanadora<=40){
+    if(cartaGanadora>=36 && cartaGanadora<=40){
             return 4;
     }
-    if(cartaGanadora>=56 & cartaGanadora<=60){
+    if(cartaGanadora>=56 && cartaGanadora<=60){
             return 4;
     }
 }
@@ -486,7 +486,7 @@ bool combateMismoElemento (int carta1, int carta2)
         }
 }
 
-
+/*
 bool dosCartasMismoNumero (int carta1, int carta2)
 {
     int ganador=0, rango_jugador=0, rango_cpu=0;
@@ -663,4 +663,21 @@ bool dosCartasMismoNumero (int carta1, int carta2)
     }
 
     return false;
+}
+*/
+
+int elementoCarta (int carta)
+{
+    if ((carta>0)&&(carta<21))
+    {
+        return 1; // fuego
+    }
+    if ((carta>20)&&(carta<41))
+    {
+        return 2; // nieve
+    }
+    if ((carta>40)&&(carta<61))
+    {
+        return 3; // agua
+    }
 }

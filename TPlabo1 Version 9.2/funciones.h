@@ -18,11 +18,12 @@ int combate_f(int , int );
 int sacarCartaMano (int [], int , int);
 int devuelveColor(int );
 bool combateMismoElemento (int , int);
-bool dosCartasMismoNumero (int , int);
+//bool dosCartasMismoNumero (int , int);
 bool validarSeleccion (int , int [], int);
 bool combinacionGanadora2 (int [] , int );
 bool combinacionGanadora1 (int [] , int );
 bool  dosCartasMismoNumero (int , int  []);
+int elementoCarta (int );
 
 
 
