@@ -768,11 +768,12 @@ int jugar()
         }
         cout << "flag desafio jugador " << desafioOverJugador;
         cout << "  flag desafio CPU" << desafioOverPC << "\n";
+
         combGanadoraUno=combinacionGanadora1(manoJugador, contGanadasJugador);
         combGanadoraDos=combinacionGanadora2(manoJugador, contGanadasJugador);
         if ((combGanadoraUno==true) || (combGanadoraDos==true)) // se cuple comb ganadador para jugador?
         {
-            Game_over_Jugador==true;
+            Game_over_Jugador=true;
             cout << "Jugador cumple combinacion ganadora";
         }
 
@@ -780,39 +781,20 @@ int jugar()
         combGanadoraDos=combinacionGanadora2(manoJugador, contGanadasCPU);
         if ((combGanadoraUno==true) || (combGanadoraDos==true))// se cuple comb ganadador para CPU?
         {
-            Game_over_PC==true;
+            Game_over_PC=true;
             cout << "CPU cumple combinacion ganadora";
         }
 
-        /// if de prueba
-        if (Game_over_Jugador==true)
-        {
-            if (desafioOverJugador==true)
-            {
-                ganoJugador=true;
-                cout << "\n" <<"entra a gano jugador";
-            }
-        }
-
-        if (Game_over_PC==true)
-        {
-            if (desafioOverPC==true)
-            {
-                ganoCPU==true;
-                cout << "\n" << "entra a gano CPU";
-            }
-        }
-        if ((ganoCPU==false || ganoJugador==false))
-        {
-            flagWINNER=false;
-        }
-        else
+        if (Game_over_Jugador==true && desafioOverJugador==true)
         {
             flagWINNER=true;
         }
-
+        if (Game_over_PC==true && desafioOverPC==true)
+        {
+            flagWINNER=true;
+        }
     }
-    while(flagWINNER=false);
+    while(flagWINNER==false);
 
     rondaGanadaElemtoJugador = rondaGanadaElemtoJugador*5;//ptos de rondaGanadaElemtoJugador se muestra en Jugador
     rondaGanadaElementoCPU = rondaGanadaElementoCPU*5;
